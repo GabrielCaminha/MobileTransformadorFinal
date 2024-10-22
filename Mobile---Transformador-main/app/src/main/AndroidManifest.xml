@@ -24,6 +24,8 @@
         <activity
             android:name=".DimensionamentoTransformador"
             android:exported="false" />
+        <activity android:name=".ResultadosCurvaMagnetizacao"
+            />
         <activity
             android:name=".ResultadoTransformador"
             android:exported="false" />

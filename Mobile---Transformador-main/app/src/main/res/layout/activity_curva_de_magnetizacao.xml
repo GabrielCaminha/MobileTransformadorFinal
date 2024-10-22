@@ -5,36 +5,70 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/input_area"
+    <!-- Rótulo para tensão máxima (VM) -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite a área da seção transversal"
-        android:inputType="numberDecimal" />
+        android:text="Tensão Máxima (VM) em Volts"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp" />
 
+    <!-- Campo de entrada para tensão máxima (VM) -->
     <EditText
-        android:id="@+id/input_comprimento"
+        android:id="@+id/input_vm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite o comprimento do caminho magnético"
-        android:inputType="numberDecimal" />
+        android:hint="Digite a tensão máxima (VM) em Volts"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Rótulo para número de espiras -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Número de Espiras"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp" />
+
+    <!-- Campo de entrada para o número de espiras -->
     <EditText
         android:id="@+id/input_numero_espiras"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite o número de espiras"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Rótulo para seleção de frequência -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione a frequência (Hz)"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp" />
+
+    <!-- Spinner para seleção de frequência (50 ou 60 Hz) -->
+    <Spinner
+        android:id="@+id/frequency_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/frequency_array"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botão para carregar arquivo XLSX -->
     <Button
         android:id="@+id/upload_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Carregar arquivo XLSX" />
+        android:text="Carregar arquivo XLSX"
+        android:layout_marginBottom="16dp" />
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/graph"
+    <!-- Botão para calcular -->
+    <Button
+        android:id="@+id/calculate_button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_marginBottom="16dp" />
 
 </LinearLayout>

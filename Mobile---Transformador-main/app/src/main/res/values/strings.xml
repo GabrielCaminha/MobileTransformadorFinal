@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Transformador</string>
     <string name="resultados">Resultados</string>
+    <!-- Definição do array de frequência diretamente no XML -->
+    <string-array name="frequency_array">
+        <item>50</item>
+        <item>60</item>
+</string-array>
 </resources>
