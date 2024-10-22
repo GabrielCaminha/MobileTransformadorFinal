@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/input_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite a área da seção transversal"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/input_comprimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o comprimento do caminho magnético"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/input_numero_espiras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o número de espiras"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/upload_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carregar arquivo XLSX" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

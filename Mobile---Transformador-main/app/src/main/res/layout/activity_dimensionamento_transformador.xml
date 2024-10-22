@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DimensionamentoTransformador">
+
+    <TextView
+        android:id="@+id/titulo6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Dados do Transformador"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerFrequencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:id="@+id/textTensaoPrimaria"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Tensão Primária (Vp) em Volts"
+        android:includeFontPadding="false"
+        android:inputType="number|numberDecimal"
+        android:minHeight="48dp"
+        android:textAlignment="viewStart"
+        android:textColorHint="#546E7A"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/textTensaoSecundaria"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Tensão Secundária (Vs) em Volts"
+        android:includeFontPadding="false"
+        android:inputType="number|numberDecimal"
+        android:minHeight="48dp"
+        android:textAlignment="viewStart"
+        android:textColorHint="#546E7A"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/potenciaCarga"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Potência da Carga em Watts"
+        android:includeFontPadding="false"
+        android:inputType="number|numberDecimal"
+        android:minHeight="48dp"
+        android:textAlignment="viewStart"
+        android:textColorHint="#546E7A"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/avisos2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#F40808"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:onClick="calcular"
+        android:text="Calcular"
+        android:textAlignment="center" />
+
+</LinearLayout>

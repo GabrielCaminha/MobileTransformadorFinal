@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/titulo1"
+                android:layout_width="389dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Dados do Transformador"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/textEspirasPrimario"
+                android:layout_width="321dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Nº de Espiras Primário (N1)"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/textEspirasSecundario"
+                android:layout_width="322dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Nº de Espiras Secundário (N2)"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <Spinner
+                android:id="@+id/spinnerCircuito"
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/spinnerReferido"
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/titulo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Conjunto de Dados A"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerTipoEnsaioA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/spinnerLadoEnsaioA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/textTensaoA"
+                android:layout_width="316dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Tensão A (VA) em Volts"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/textCorrenteA"
+                android:layout_width="316dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Corrente A (IA) em Amperes"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/textPotenciaA"
+                android:layout_width="317dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Potência A (PA) em Watts"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/titulo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Conjunto de Dados B"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerTipoEnsaioB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/spinnerLadoEnsaioB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/textTensaoB"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Tensão B (VB) em Volts"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/textCorrenteB"
+                android:layout_width="316dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Corrente B (IB) em Amperes"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/textPotenciaB"
+                android:layout_width="317dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Potência B (PB) em Watts"
+                android:includeFontPadding="false"
+                android:inputType="number|numberDecimal"
+                android:minHeight="48dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="#546E7A"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/avisos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textColor="#F40808"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="250dp"
+                android:onClick="calcular"
+                android:text="Calcular"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

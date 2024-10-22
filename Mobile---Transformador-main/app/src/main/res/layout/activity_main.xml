@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="313dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/transformador" />
+
+    <Button
+        android:id="@+id/parametros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        android:onClick="parametros"
+        android:text="Parâmetros do Transformador" />
+
+    <Button
+        android:id="@+id/dimensoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:onClick="dimensoes"
+        android:text="Dimensões do Transformador" />
+
+    <Button
+        android:id="@+id/curvaDeMagnetizacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:onClick="mostrarCurvaDeMagnetizacao"
+        android:text="Curva de Magnetização" />
+
+    <LinearLayout
+        android:id="@+id/layout_grafico"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"/>
+</LinearLayout>
