@@ -49,7 +49,7 @@ public class CurvaDeMagnetizacaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curva_de_magnetizacao);
 
-        inputVM = findViewById(R.id.input_vm);  // Campo para tensão máxima
+        inputVM = findViewById(R.id.input_vm);  // Campo para tensão primária
         inputNumeroDeEspiras = findViewById(R.id.input_numero_espiras);  // Campo para número de espiras
         frequencySpinner = findViewById(R.id.frequency_spinner);  // Spinner para selecionar a frequência
 
@@ -103,25 +103,26 @@ public class CurvaDeMagnetizacaoActivity extends AppCompatActivity {
                 fluxData.add(fluxValue);
             }
 
-            // Inicializar valores
-            double VM = 325; // Tensão máxima (V) para 230V
-            double numeroDeEspiras = 850; // Número de espiras do primário
+            // Inicializar valores de entrada do usuário
+            double Vp = Double.parseDouble(inputVM.getText().toString());  // Tensão primária do usuário
+            double VM = Vp * Math.sqrt(2); // Calcula a tensão máxima (Vm)
+            double numeroDeEspiras = Double.parseDouble(inputNumeroDeEspiras.getText().toString());  // Número de espiras
             int freq = Integer.parseInt(frequencySpinner.getSelectedItem().toString()); // Frequência selecionada
-            double w = 2 * Math.PI * freq; // Calcular velocidade angular
+            double omega = 2 * Math.PI * freq; // Calcular velocidade angular
 
             // Calcular fluxo versus tempo
             List<Double> time = new ArrayList<>();
             List<Double> flux = new ArrayList<>();
 
             double step = (freq == 50) ? 1.0 / 2500 : 1.0 / 3000; // Resolução do step
-            double endTime = 0.04;  // Tempo final para um ciclo completo para ambos os casos
+            double endTime = 0.34;  // Tempo final para um ciclo completo para ambos os casos
 
             for (double t = 0; t <= endTime; t += step) {
                 time.add(t);
-                flux.add(-VM / (w * numeroDeEspiras) * Math.cos(w * t)); // Cálculo do fluxo
+                flux.add(-VM / (omega * numeroDeEspiras) * Math.cos(omega * t)); // Calculo do fluxo magnético
             }
 
-            // Calcular a FMM (mmf) correspondente a um dado fluxo (flux)
+            // Interpolar a MMF correspondente ao fluxo calculado
             List<Double> mmfInterpolated = new ArrayList<>();
             for (double f : flux) {
                 double interpolatedMMF = interpolateFluxToMMF(fluxData, mmfData, f);
@@ -131,7 +132,7 @@ public class CurvaDeMagnetizacaoActivity extends AppCompatActivity {
             // Calcular corrente de magnetização (im)
             List<Double> correnteMagnetizacao = new ArrayList<>();
             for (double mmf : mmfInterpolated) {
-                correnteMagnetizacao.add(mmf / numeroDeEspiras); // Dividir pela quantidade de espiras
+                correnteMagnetizacao.add(mmf / numeroDeEspiras); // Cálculo de Im
             }
 
             // Calcular corrente eficaz (irms)
@@ -155,7 +156,6 @@ public class CurvaDeMagnetizacaoActivity extends AppCompatActivity {
             Toast.makeText(this, "Erro ao ler o arquivo: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
 
     // Função para interpolar o valor de MMF dado um fluxo
     private double interpolateFluxToMMF(List<Double> fluxData, List<Double> mmfData, double flux) {
